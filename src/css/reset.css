@@ -24,7 +24,9 @@ a {
 }
 
 button {
+  all: unset;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 img {
@@ -32,3 +34,5 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+

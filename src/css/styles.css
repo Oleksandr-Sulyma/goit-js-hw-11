@@ -7,13 +7,147 @@
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
 
 /* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
 @import url('./loader.css');
+
+body {
+  background-color: #fff !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2e2f42;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin: 36px auto 32px auto;
+  gap: 8px;
+}
+.search-label {
+}
+.search-input {
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+  background: #fff;
+  color: #808080;
+  margin: 0;
+  padding: 16px 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.search-input:hover {
+  border: 1px solid #000;
+}
+
+.search-input:focus {
+  color: #2e2f42;
+  border: 1px solid #4e75ff;
+}
+
+.btn-submit {
+  border-radius: 8px;
+  padding-block: 8px;
+  padding-inline: 16px;
+  width: 75px;
+  height: 40px;
+  background: #4e75ff;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+  background: #6c8cff;
+}
+
+.btn-submit:active {
+  background: #6c8cff;
+  transform: scale(0.98);
+}
+
+.btn-submit:disabled {
+  background: #4e75ff;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  max-width: 1128px;
+  background: #fff;
+  margin: 0 auto;
+  /* padding: 24px 156px; */
+}
+
+.image-wrapper {
+  /* position: relative; */
+  display: inline-block;
+  width: 360px;
+  height: 200px;
+}
+.image {
+  object-fit: cover;
+  border: 1px solid #808080;
+  outline: none;
+  width: 100%;
+  height: 152px;
+}
+
+.stats-image {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #808080;
+  width: 100%;
+  height: 48px;
+  background: #fff;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 4px;
+  
+}
+
+.stat-title {
+font-weight: 600;
+font-size: 12px;
+line-height: 1.33333;
+letter-spacing: 0.04em;
+}
+
+.stat-text {
+ font-size: 12px;
+line-height: 2;
+letter-spacing: 0.04em;
+}
+
+.sl-overlay {
+  background: rgba(46, 47, 66, 0.8);
+}
+
+.sl-wrapper .sl-close {
+  color: #fff;
+}
+
+.sl-wrapper .sl-counter {
+  color: #fff;
+}
+
+.sl-wrapper .sl-navigation button {
+  color: #fff;
+}
