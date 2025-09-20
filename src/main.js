@@ -20,21 +20,29 @@ form.addEventListener('submit', event => {
   clearGallery();
   showLoader();
 
-  let search = event.target.elements.search.value.trim();
+  let search = event.target.elements.search.value.trim().replace(/\s+/g, '+');
+  console.log('search - ', search);
+
   if (!search) {
-    hideLoader();
+    hideLoader()
     event.target.elements.search.value = '';
     return showError('Sorry, you did not enter a query. Please try again!');
   }
 
-  search = search.replace(/\s+/g, '+');
+  // search = search.replace(/\s+/g, '+');
+  let arrImage;
 
   getImagesByQuery(search)
     .then(res => {
-      const arrImage = res.data.hits;
-      if (arrImage.length === 0) {
+      arrImage = res.data.hits;
+      console.log(arrImage);
+
+      let numderImg = arrImage.length;
+      if (numderImg === 0) {
+        hideLoader();
         return showError(
           'Sorry, there are no images matching your search query. Please, try again!'
+          
         );
       }
       createGallery(arrImage);

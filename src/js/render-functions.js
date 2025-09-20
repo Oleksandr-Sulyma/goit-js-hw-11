@@ -83,7 +83,21 @@ export function showLoader() {
 //  клас для відображення лоадера. Нічого не повертає.
 
 export function hideLoader() {
-  span.classList.remove('active');
+  let sum = 0;
+  const arr = galleryEl.querySelectorAll('img');
+  if (arr.length === 0) {
+    span.classList.remove('active');
+    return;
+  }
+
+  arr.forEach(el => {
+    el.addEventListener('load', () => {
+      sum += 1;
+      if (sum === arr.length) {
+        span.classList.remove('active');
+      }
+    });
+  });
 }
 
 export function showError(message) {
