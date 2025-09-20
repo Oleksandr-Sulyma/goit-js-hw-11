@@ -12,15 +12,15 @@
 @import url('./loader.css');
 
 body {
-  background-color: #fff !important;
+  background-color: #fff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   color: #2e2f42;
+  
 }
-
-.search-form {
+.form {
   display: flex;
   justify-content: center;
   margin: 36px auto 32px auto;
@@ -78,15 +78,22 @@ body {
   cursor: not-allowed;
 }
 
+.wrapper-gallery{
+display: block;
+position: relative;
+max-width: 1128px;
+  background: #fff;
+  margin: 0 auto;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 24px;
-  max-width: 1128px;
-  background: #fff;
-  margin: 0 auto;
+  max-width: 100%;
+ 
   /* padding: 24px 156px; */
 }
 

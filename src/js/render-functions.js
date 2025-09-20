@@ -7,6 +7,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import errorIcon from '../img/bi_x-octagon.svg';
 
 const galleryEl = document.querySelector('.gallery');
+const span = document.querySelector('.loader');
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
@@ -32,8 +33,8 @@ export function createGallery(images) {
         user,
       }) =>
         `
-<a class="image-wrapper" href="${largeImageURL}">
-<img class="image" src="${webformatURL}" alt='Autor - ${user}' title="${tags}"/>
+<li><a class="image-wrapper" href="${largeImageURL}">
+<img class="image" src="${webformatURL}" alt='Tags: ${tags}' title="${tags}"/>
 <ul class="stats-image">
 <li class="stat-item">
 <h3 class="stat-title">Likes</h3>
@@ -53,6 +54,7 @@ export function createGallery(images) {
 </li>
 </ul>
 </a>
+</li>
     `
     )
     .join('');
@@ -74,21 +76,21 @@ export function clearGallery() {
 //  клас для відображення лоадера. Нічого не повертає.
 
 export function showLoader() {
-  galleryEl.classList.add('loader');
+  span.classList.add('active');
 }
 
 // hideLoader(). Ця функція нічого не приймає, повинна прибирати
 //  клас для відображення лоадера. Нічого не повертає.
 
 export function hideLoader() {
-  galleryEl.classList.remove('loader');
+  span.classList.remove('active');
 }
 
 export function showError(message) {
   iziToast.show({
     message: `${message}`,
     backgroundColor: '#ef4040',
-    position: "topRight",
+    position: 'topRight',
     maxWidth: 482,
     messageColor: 'white',
     theme: 'dark',

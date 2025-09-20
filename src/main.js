@@ -11,7 +11,7 @@ import {
 
 import './css/styles.css';
 
-const form = document.querySelector('.search-form');
+const form = document.querySelector('.form');
 const input = document.querySelector('.search-input');
 const btn = document.querySelector('.btn-submit');
 
@@ -48,4 +48,3 @@ form.addEventListener('submit', event => {
       event.target.elements.search.value = '';
     });
 });
-

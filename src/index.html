@@ -9,7 +9,7 @@
   </head>
   <body>
     <main>
-      <form class="search-form">
+      <form class="form">
         <label class="search-label">
           <input
             class="search-input"
@@ -22,7 +22,10 @@
         </label>
         <button class="btn-submit" type="submit">Search</button>
       </form>
-      <div class="gallery"></div>
+      <div class="wrapper-gallery">
+        <span class="loader"></span>
+        <ul class="gallery"></ul>
+      </div>
     </main>
 
     <script type="module" src="./main.js"></script>
