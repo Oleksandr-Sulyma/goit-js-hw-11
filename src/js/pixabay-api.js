@@ -21,5 +21,6 @@ export default function getImagesByQuery(query) {
     params: {
       q: `${query}`,
     },
-  });
+  })
+  .then(res =>res.data);
 }

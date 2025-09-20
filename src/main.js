@@ -34,7 +34,7 @@ form.addEventListener('submit', event => {
 
   getImagesByQuery(search)
     .then(res => {
-      arrImage = res.data.hits;
+      arrImage = res.hits;
       console.log(arrImage);
 
       let numderImg = arrImage.length;
