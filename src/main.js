@@ -56,3 +56,6 @@ form.addEventListener('submit', event => {
       event.target.elements.search.value = '';
     });
 });
+
+
+

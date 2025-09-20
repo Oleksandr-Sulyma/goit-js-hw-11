@@ -8,6 +8,7 @@ import errorIcon from '../img/bi_x-octagon.svg';
 
 const galleryEl = document.querySelector('.gallery');
 const span = document.querySelector('.loader');
+const loaderOverlay = document.querySelector('.loader-overlay');
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
@@ -76,7 +77,7 @@ export function clearGallery() {
 //  клас для відображення лоадера. Нічого не повертає.
 
 export function showLoader() {
-  span.classList.add('active');
+  loaderOverlay.classList.add('active');
 }
 
 // hideLoader(). Ця функція нічого не приймає, повинна прибирати
@@ -86,15 +87,15 @@ export function hideLoader() {
   let sum = 0;
   const arr = galleryEl.querySelectorAll('img');
   if (arr.length === 0) {
+    loaderOverlay.classList.remove('active');
     span.classList.remove('active');
     return;
   }
-
   arr.forEach(el => {
     el.addEventListener('load', () => {
       sum += 1;
       if (sum === arr.length) {
-        span.classList.remove('active');
+        loaderOverlay.classList.remove('active');
       }
     });
   });
